@@ -1,17 +1,19 @@
 development:
-  adapter: posgresql
-  database: db/development.posgresql
+  adapter: postgresql
+  encoding: unicode
+  database: st-pag-dev
   pool: 5
-  timeout: 5000
+  username: manstike
+  password: 1234
+  host: localhost
 
 test:
-  adapter: posgresql
-  database: db/test.posgresql
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  encoding: unicode
+  database: st-pag-test
 
-production:
-  adapter: posgresql
-  database: db/production.posgresql
   pool: 5
-  timeout: 5000
+  username: manstike
+  password: 1234
+  host: localhost
+
