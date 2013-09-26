@@ -1,0 +1,17 @@
+development:
+  adapter: posgresql
+  database: db/development.posgresql
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: posgresql
+  database: db/test.posgresql
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: posgresql
+  database: db/production.posgresql
+  pool: 5
+  timeout: 5000
