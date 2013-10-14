@@ -7,7 +7,6 @@ gem 'pg'
 gem 'haml'
 gem 'rails', '4.0.0'
 gem 'devise'
-
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.0.1'
