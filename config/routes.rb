@@ -5,9 +5,12 @@ RlPag::Application.routes.draw do
   namespace :user do
     resources :dash, :messages, :gallery
   end
-  resources :posts, :galleries
+  resources :galleries
 
-  resources :posts, :galleries do
+  resources :posts do
+    #collection do
+      get :events
+    #end
     resources :comments
   end
 

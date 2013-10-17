@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
 
+  include ActionController::Live
+
   before_action :set_post, only: [:show,:edit,:update]
-    # The method Edit is not necesary
+  # The method Edit is not necesary
   def index
     @posts = Post.all
   end
@@ -13,6 +15,17 @@ class PostsController < ApplicationController
   def show
     @post
     @comments = @post.comments.build
+  end
+
+  def events
+    response.headers['Content-Type'] = 'text/event-stream'
+      response.stream.write "event: post\n"
+      response.stream.write "data: Hola \n\n"
+      sleep 2 
+  rescue IOError
+    # Error
+  ensure
+    response.stream.close
   end
 
   def edit
@@ -46,7 +59,7 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:name,:content)
   end
-  
+
   def set_post
     @post = Post.find(params[:id])
   end
