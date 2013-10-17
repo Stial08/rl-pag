@@ -1,0 +1,22 @@
+.main-post-container
+  .post-container
+    %h2 The post
+    %p
+      = @post.name
+    %p
+      = @post.content
+    = link_to "Edit", edit_post_path(@post) 
+  .comment-container
+    .new-comment
+      %h2 Comments 
+      = form_for [@post , @comments]do |f|
+        .comment-content
+          = f.text_field :content 
+        .submit-content
+          = f.submit
+    .display-comments
+      - if @post.comments.count > 0
+        = render @post.comments.select(&:persisted?)
+      - else 
+        %p This post has no comment
+    .user-container

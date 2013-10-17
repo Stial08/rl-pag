@@ -1,0 +1,7 @@
+var Flive = {
+  Models: {},
+  Collections: {},
+  Views: {},
+  Routes: {},
+  }
+};

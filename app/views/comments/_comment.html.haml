@@ -1,0 +1,7 @@
+= div_for(comment) do 
+  .comment-user
+    %h4 USER: #{comment.user.email} 
+  .comment-text
+    %p CONTENT: #{simple_format(comment.content)}
+
+
