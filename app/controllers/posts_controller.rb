@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     @comments = @post.comments.build
   end
 
-  def events
+  def events 
     response.headers['Content-Type'] = 'text/event-stream'
       response.stream.write "event: post\n"
       response.stream.write "data: Hola \n\n"
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
       flash[:notice] = "Post has been saved"
       redirect_to @post 
     else
-      flash[:error] = "Sorry, the pot can't saved"
+      flash[:error] = "Sorry, the post can't saved"
       render 'new'
     end
   end

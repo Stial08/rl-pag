@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.0.1'
 gem 'puma'
+gem 'ejs'
 
 group :doc do
   gem 'sdoc', require: false
