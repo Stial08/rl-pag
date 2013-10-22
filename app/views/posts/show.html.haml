@@ -7,15 +7,15 @@
       = @post.content
     .edit-content
       = link_to "Edit", edit_post_path(@post) 
-  .comment-container
-    .new-comment
+  .comment-container.row
+    .new-comment.col-lg-6
       %h2 Comments 
       = form_for [@post , @comments]do |f|
         .comment-content
           = f.text_field :content 
         .submit-content
           = f.submit
-    .display-comments
+    .display-comments.col-lg-6
       - if @post.comments.count > 0
         = render @post.comments.select(&:persisted?)
       - else 

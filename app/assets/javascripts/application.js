@@ -15,7 +15,6 @@
 //= require turbolinks
 //
 //= require bootstrap
-//= require comments
 //
 //= require lib/jquery-1.10.2
 //= require lib/underscore-min
